@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Landing Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Advanced Landing Page</h1>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#features">Features</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to Our Website!</h2>
+    <p>This is a feature-rich landing page with a dynamic image slider, navigation menu, and a contact form.</p>
+
+    <div class="slider">
+      <div class="slides">
+        <div class="slide"><img src="images/image1.jpeg" alt="Slide 1"></div>
+        <div class="slide"><img src="images/image2.jpeg" alt="Slide 2"></div>
+        <div class="slide"><img src="images/image3.jpeg" alt="Slide 3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a team of dedicated professionals committed to providing high-quality solutions.</p>
+  </section>
+
+  <section id="features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Responsive Design</li>
+      <li>Dynamic Image Slider</li>
+      <li>Contact Form</li>
+      <li>Modern Styling</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Advanced Landing Page by Ayushi Poriya</p>
+  </footer>
+
+  <script>
+    // JavaScript for image slider
+    const slides = document.querySelector('.slides');
+    const slide = document.querySelectorAll('.slide');
+    let counter = 1;
+
+    setInterval(() => {
+      slides.style.transition = 'transform 0.5s ease-in-out';
+      slides.style.transform = 'translateX(' + (-counter * 100) + '%)';
+
+      counter++;
+
+      if (counter === slide.length) {
+        setTimeout(() => {
+          slides.style.transition = 'none';
+          slides.style.transform = 'translateX(0)';
+          counter = 1;
+        }, 500);
+      }
+    }, 3000); // Change slide every 3 seconds
+  </script>
+
+</body>
+</html>
